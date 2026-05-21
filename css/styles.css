@@ -588,14 +588,14 @@ svg { display: block; }
 
 .quote-block {
   margin-top: 32px;
-  padding: 26px 28px;
+  padding: 28px 30px;
   background: #fff;
   border-radius: var(--radius);
   border: 1px solid var(--color-border);
   box-shadow: var(--shadow-sm);
   position: relative;
   display: flex;
-  gap: 18px;
+  gap: 20px;
 }
 .quote-mark {
   width: 28px;
@@ -604,11 +604,33 @@ svg { display: block; }
   flex-shrink: 0;
   margin-top: 4px;
 }
+.quote-body { flex: 1; min-width: 0; }
 .quote-block p {
   font-size: 17px;
   line-height: 1.55;
   color: var(--color-text);
   font-weight: 500;
+}
+.quote-author {
+  margin-top: 18px;
+  padding-top: 16px;
+  border-top: 1px solid var(--color-border);
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.quote-author-name {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--color-text);
+  letter-spacing: -0.005em;
+}
+.quote-author-role {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--color-orange);
 }
 
 .img-stack {
