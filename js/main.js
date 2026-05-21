@@ -5,14 +5,26 @@
 (() => {
   'use strict';
 
-  /* ---------- Header com scroll ---------- */
-  const header = document.getElementById('siteHeader');
+  /* ---------- Header + Back-to-top com scroll ---------- */
+  const header     = document.getElementById('siteHeader');
+  const backToTop  = document.getElementById('backToTop');
+
   const onScroll = () => {
-    if (window.scrollY > 30) header.classList.add('scrolled');
+    const y = window.scrollY;
+    if (y > 30) header.classList.add('scrolled');
     else header.classList.remove('scrolled');
+
+    if (backToTop) {
+      if (y > 400) backToTop.classList.add('is-visible');
+      else backToTop.classList.remove('is-visible');
+    }
   };
   window.addEventListener('scroll', onScroll, { passive: true });
   onScroll();
+
+  backToTop?.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
 
   /* ---------- Menu mobile ---------- */
   const toggle  = document.getElementById('menuToggle');
