@@ -1258,12 +1258,51 @@ svg { display: block; }
 .form-field select { appearance: none; background-image: linear-gradient(45deg, transparent 50%, var(--color-orange) 50%), linear-gradient(135deg, var(--color-orange) 50%, transparent 50%); background-position: right 18px center, right 13px center; background-size: 6px 6px, 6px 6px; background-repeat: no-repeat; padding-right: 42px; }
 
 .btn-block { margin-top: 8px; }
-.form-tip {
-  margin-top: 18px;
-  font-size: 12.5px;
-  color: rgba(255,255,255,0.4);
-  text-align: center;
+
+.form-consent {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  margin: 4px 0 20px;
+  cursor: pointer;
+  font-size: 13px;
   line-height: 1.5;
+  color: rgba(255, 255, 255, 0.6);
+  user-select: none;
+}
+.form-consent input {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+  margin: 1px 0 0;
+  border: 1.5px solid var(--color-dark-line);
+  border-radius: 6px;
+  background: var(--color-dark);
+  cursor: pointer;
+  position: relative;
+  transition: background var(--t-fast), border-color var(--t-fast);
+}
+.form-consent input:hover { border-color: rgba(243, 146, 0, 0.5); }
+.form-consent input:checked {
+  background: var(--color-orange);
+  border-color: var(--color-orange);
+}
+.form-consent input:checked::after {
+  content: "";
+  position: absolute;
+  left: 6px;
+  top: 2px;
+  width: 5px;
+  height: 10px;
+  border: solid #fff;
+  border-width: 0 2.5px 2.5px 0;
+  transform: rotate(45deg);
+}
+.form-consent input:focus-visible {
+  outline: 2px solid var(--color-orange);
+  outline-offset: 2px;
 }
 .form-message {
   margin-top: 14px;

@@ -145,8 +145,8 @@
               <defs>
                 <path id="circlePath" d="M 100, 100 m -82, 0 a 82,82 0 1,1 164,0 a 82,82 0 1,1 -164,0" />
               </defs>
-              <text class="badge-text">
-                <textPath href="#circlePath" startOffset="0" textLength="515" lengthAdjust="spacing">CONCREJOTA · PRECISÃO QUE CONSTRÓI · </textPath>
+              <text class="badge-text" xml:space="preserve">
+                <textPath href="#circlePath" startOffset="0" textLength="515" lengthAdjust="spacing">CONCREJOTA   ·   PRECISÃO QUE CONSTRÓI   ·   </textPath>
               </text>
             </svg>
             <div class="badge-center">
@@ -880,6 +880,17 @@
             ></textarea>
           </div>
 
+          <label class="form-consent" for="consent">
+            <input
+              type="checkbox"
+              id="consent"
+              name="consentimento"
+              value="Sim, autorizo o contato"
+              required
+            />
+            <span>Autorizo o contato da equipe comercial da ConcreJota sobre esta solicitação.</span>
+          </label>
+
           <button class="btn btn-primary btn-block btn-lg" type="submit">
             <span>Enviar solicitação</span>
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
@@ -888,10 +899,6 @@
           </button>
 
           <p class="form-message" id="formMessage" aria-live="polite"></p>
-
-          <p class="form-tip">
-            Ao enviar, você concorda em receber um retorno da nossa equipe comercial.
-          </p>
         </form>
       </div>
     </section>
