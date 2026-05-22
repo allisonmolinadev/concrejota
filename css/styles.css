@@ -1335,7 +1335,13 @@ svg { display: block; }
   padding-bottom: 60px;
   border-bottom: 1px solid var(--color-dark-line);
 }
-.footer-logo { height: 76px; width: auto; margin-bottom: 18px; }
+.footer-logo-link {
+  display: inline-block;
+  margin-bottom: 18px;
+  transition: opacity var(--t-fast), transform var(--t-fast);
+}
+.footer-logo-link:hover { opacity: 0.8; transform: translateY(-2px); }
+.footer-logo { height: 76px; width: auto; display: block; }
 .footer-tag {
   color: var(--color-orange-soft);
   font-style: italic;

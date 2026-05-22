@@ -111,7 +111,7 @@
   });
 })();
 
-/* ---------- Form submit (Web3Forms via AJAX) ---------- */
+/* ---------- Form submit (FormSubmit.co via AJAX) ---------- */
 (() => {
   const form = document.getElementById('contactForm');
   if (!form) return;
@@ -141,9 +141,11 @@
       });
       const data = await res.json().catch(() => ({}));
 
-      if (res.ok && data.success !== false) {
+      // FormSubmit retorna success como string ("true"/"false");
+      // String() normaliza para funcionar com qualquer formato.
+      if (res.ok && String(data.success) !== 'false') {
         if (btnSpan) btnSpan.textContent = 'Solicitação enviada ✓';
-        setMessage('Obrigado! Recebemos sua solicitação e retornaremos em breve.', 'success');
+        setMessage('Obrigado! Recebemos sua solicitação e retornaremos em breve. Confira também seu e-mail.', 'success');
         form.reset();
         setTimeout(() => {
           if (btnSpan) btnSpan.textContent = originalLabel;

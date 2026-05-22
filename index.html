@@ -646,7 +646,7 @@
             </summary>
             <div class="faq-answer">
               <p>
-                Atendemos obras residenciais, comerciais e industriais — de
+                Atendemos obras residenciais, comerciais e industriais, de
                 pequeno a grande porte. Trabalhamos com construtoras,
                 incorporadoras, engenheiros e clientes finais que precisam de
                 concreto com responsabilidade técnica.
@@ -692,7 +692,7 @@
               <p>
                 Sim. Oferecemos acompanhamento técnico especializado para
                 indicar a dosagem ideal, esclarecer dúvidas e garantir a
-                aplicação correta — buscando sempre o melhor resultado
+                aplicação correta, buscando sempre o melhor resultado
                 estrutural em cada projeto.
               </p>
             </div>
@@ -786,14 +786,15 @@
           </ul>
         </div>
 
-        <form class="contact-form reveal" id="contactForm" action="https://api.web3forms.com/submit" method="POST">
-          <!-- Web3Forms — campos de configuração obrigatórios -->
-          <input type="hidden" name="access_key" value="44e6072c-83a0-45f2-8fa5-87d5534c0cc9" />
-          <input type="hidden" name="subject" value="Novo orçamento via site ConcreJota" />
-          <input type="hidden" name="from_name" value="Site ConcreJota" />
-          <input type="hidden" name="redirect" value="false" />
+        <form class="contact-form reveal" id="contactForm" action="https://formsubmit.co/ajax/contato@concrejota.com.br" method="POST">
+          <!-- FormSubmit.co — campos de configuração -->
+          <input type="hidden" name="_subject" value="Novo orçamento via site ConcreJota" />
+          <input type="hidden" name="_template" value="table" />
+          <input type="hidden" name="_captcha" value="false" />
+          <!-- Mensagem automática enviada ao cliente (autoresponder) -->
+          <input type="hidden" name="_autoresponse" value="Olá! Recebemos a sua solicitação de orçamento no site da ConcreJota e agradecemos o contato.&#10;&#10;Nossa equipe técnica já foi notificada e entrará em contato em breve para entender os detalhes da sua obra e preparar a melhor proposta em concreto usinado.&#10;&#10;Precisa de atendimento imediato? Fale com a gente pelo WhatsApp:&#10;• São José do Rio Preto: (17) 3211-2446&#10;• Olímpia: (17) 3211-2447&#10;• Catanduva: (17) 3211-2446&#10;&#10;Obrigado por escolher a ConcreJota. Precisão que constrói.&#10;&#10;ConcreJota | Uma empresa do Grupo FAJ&#10;contato@concrejota.com.br" />
           <!-- Honeypot anti-spam (não exibido ao usuário) -->
-          <input type="checkbox" name="botcheck" style="display:none" tabindex="-1" autocomplete="off" />
+          <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off" />
 
           <h3 class="form-title">Solicite seu orçamento</h3>
           <p class="form-sub">Resposta rápida da nossa equipe técnica.</p>
@@ -909,7 +910,9 @@
   <footer class="site-footer">
     <div class="container footer-top">
       <div class="footer-brand">
-        <img src="assets/logo-concrejota-vertical-sem-slogan.png" alt="ConcreJota" class="footer-logo" />
+        <a href="#top" class="footer-logo-link" aria-label="Voltar ao topo">
+          <img src="assets/logo-concrejota-vertical-sem-slogan.png" alt="ConcreJota" class="footer-logo" />
+        </a>
         <p class="footer-tag">Precisão que constrói.</p>
         <p class="footer-desc">
           Concreto usinado produzido com rigor técnico, controle de qualidade e
