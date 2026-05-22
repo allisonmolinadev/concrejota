@@ -111,51 +111,17 @@
   });
 })();
 
-/* ---------- Form submit (FormSubmit.co via AJAX) ---------- */
+/* ---------- Form submit (FormSubmit.co — envio tradicional) ----------
+   O envio é feito de forma tradicional (sem AJAX) porque o autoresponder
+   do FormSubmit só funciona assim. O navegador valida os campos required
+   antes de disparar o submit; aqui apenas damos feedback no botão.        */
 (() => {
   const form = document.getElementById('contactForm');
   if (!form) return;
 
-  const messageEl = document.getElementById('formMessage');
   const btnSpan = form.querySelector('button[type="submit"] span');
-  const originalLabel = btnSpan ? btnSpan.textContent : 'Enviar solicitação';
 
-  const setMessage = (text, type) => {
-    if (!messageEl) return;
-    messageEl.textContent = text;
-    messageEl.className = 'form-message ' + (type ? 'is-' + type : '');
-  };
-
-  form.addEventListener('submit', async (e) => {
-    e.preventDefault();
-    setMessage('', '');
+  form.addEventListener('submit', () => {
     if (btnSpan) btnSpan.textContent = 'Enviando...';
-
-    const formData = new FormData(form);
-
-    try {
-      const res = await fetch(form.action, {
-        method: 'POST',
-        body: formData,
-        headers: { Accept: 'application/json' },
-      });
-      const data = await res.json().catch(() => ({}));
-
-      // FormSubmit retorna success como string ("true"/"false");
-      // String() normaliza para funcionar com qualquer formato.
-      if (res.ok && String(data.success) !== 'false') {
-        if (btnSpan) btnSpan.textContent = 'Solicitação enviada ✓';
-        setMessage('Obrigado! Recebemos sua solicitação e retornaremos em breve. Confira também seu e-mail.', 'success');
-        form.reset();
-        setTimeout(() => {
-          if (btnSpan) btnSpan.textContent = originalLabel;
-        }, 3500);
-      } else {
-        throw new Error(data.message || 'Falha no envio');
-      }
-    } catch (err) {
-      if (btnSpan) btnSpan.textContent = originalLabel;
-      setMessage('Não foi possível enviar agora. Tente novamente ou fale com a gente pelo WhatsApp.', 'error');
-    }
   });
 })();
