@@ -1296,7 +1296,7 @@ svg { display: block; }
   padding-bottom: 60px;
   border-bottom: 1px solid var(--color-dark-line);
 }
-.footer-logo { height: 40px; width: auto; margin-bottom: 18px; }
+.footer-logo { height: 76px; width: auto; margin-bottom: 18px; }
 .footer-tag {
   color: var(--color-orange-soft);
   font-style: italic;
